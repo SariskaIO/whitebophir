@@ -136,7 +136,7 @@ function handleRequest(request, response) {
       
       if (parts[1] === "delete" ) {  
         console.log("parts", parts);
-        const board = new BoardData();
+        const board = new BoardData(parts[2]);
         board.delete(parts[2]);
          console.log("board deleted")
         response.end();

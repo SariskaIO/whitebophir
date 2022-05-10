@@ -136,9 +136,9 @@ function handleRequest(request, response) {
       
       if (parts[1] === "delete" ) {  
         console.log("parts", parts);
-        var boardName = parsedUrl.searchParams.get("board") || "anonymous";
         const board = new BoardData();
-        board.delete(boardName);
+        board.delete(parts[2]);
+         console.log("board deleted")
         response.end();
       } else if (parts.length === 1) {
         // '/boards?board=...' This allows html forms to point to boards
